@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .research-details {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .research-image {
+            flex: 1;
+            margin-right: 40px;
+        }
+        .research-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .research-content {
+            flex: 2;
+        }
+        .research-content h1 {
+            font-size: 32px;
+            color: #333;
+            margin-top: 0;
+        }
+        .research-content h2 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .research-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .research-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .research-content table, .research-content th, .research-content td {
+            border: 1px solid #ddd;
+        }
+        .research-content th, .research-content td {
+            padding: 10px;
+            text-align: left;
+        }
+        .research-content th {
+            background-color: #f4f4f4;
+        }
+        .research-content .key-points {
+            margin-top: 20px;
+        }
+        .research-content .key-points ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .research-content .key-points li {
+            margin-bottom: 10px;
+        }
+        .research-content .buttons {
+            margin-top: 20px;
+        }
+        .research-content .publication-details {
+            margin-top: 20px;
+        }
+        .research-content .publication-details ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .research-content .publication-details li {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .research-content .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .research-content .buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="research-details">
+        <!-- Research Image on the Left -->
+        <div class="research-image">
+            <img id="research-image" src="" alt="Research Image">
+        </div>
+
+        <!-- Research Content on the Right -->
+        <div class="research-content">
+            <!-- Research Title -->
+            <h1 id="research-title"></h1>
+
+            <!-- Research Description -->
+            <p id="research-description"></p>
+
+            <!-- Key Findings -->
+            <h2>Key Findings</h2>
+            <p id="key-findings"></p>
+
+            <!-- Additional Features (for Food Waste Reduction Platform) -->
+            <div id="additional-features">
+                <!-- Additional features will be dynamically inserted here -->
+            </div>
+
+            <div id="publication-details">
+                <!-- Publication details will be dynamically inserted here -->
+            </div>
+
+            <!-- Pie Chart Data -->
+            <h2 id="pie-chart-title"></h2>
+            <table id="pie-chart-data">
+                <!-- Pie chart data will be dynamically inserted here -->
+            </table>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <a id="demo-button" href="">Take Demo</a>
+                <a id="paper-button" href="">View Paper</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for multiple projects
+        const projects = [
+            {
+                id: 1,
+                image: "assets/img/all-images/Heart Disease.png",
+                title: "Predictive Model for Heart Disease",
+                description: "Cardiovascular disease (CVD) remains a formidable global health challenge, demanding early detection strategies to mitigate its potentially fatal consequences. This study addresses the urgent need for precise predictive models to identify individuals at risk of heart disease.",
+                keyFindings: "Our findings underscore the remarkable performance of SVM, achieving an impressive accuracy of 97.53%, with sensitivity and specificity rates of 97.50% and 94.94%, respectively, in heart disease detection. Furthermore, our real-time patient monitoring system, driven by KNN, facilitates continuous parameter tracking and immediate doctor notification via GSM technology upon critical threshold breaches, enhancing proactive intervention strategies.",
+                pieChartData: [
+                    { type: "Coronary Artery Disease (CAD)", percentage: "22.5%" },
+                    { type: "Arrhythmia", percentage: "20.2%" },
+                    { type: "Valvular Heart Disease", percentage: "19.8%" },
+                    { type: "Cardiomyopathy", percentage: "19.0%" },
+                    { type: "Heart Failure", percentage: "18.5%" }
+                ],
+                demoLink: "assets/img/cv/Updated Resume brajesh.pdf",
+                paperLink: "assets/img/all-images/Heart Disease.png"
+            },
+            {
+                id: 2,
+                image: "assets\img\all-images\Morph.png",
+                title: "Food Waste Reduction Platform",
+                description: "Food waste is a pressing issue that contributes to environmental degradation, economic loss, and social inequity. This project, titled 'Save That Gravy!', aims to tackle food waste in the catering industry by leveraging Machine Learning (ML) for predictive analytics and incorporating surplus management solutions to optimize resource utilization.",
+                keyFindings: "The platform features a diner prediction model that estimates the expected number of attendees for various event types such as weddings, social gatherings, and corporate events.",
+                additionalFeatures: [
+                    "Machine Learning Models for accurate diner prediction.",
+                    "User Profile Management for personalized recommendations.",
+                    "Automated Notifications for surplus food alerts.",
+                    "Surplus Management System to redistribute excess food.",
+                    "Real-time analytics dashboard for event planners."
+                ],
+                pieChartData: [], // No pie chart data for this project
+                demoLink: "https://morph-ai.onrender.com/",
+                paperLink: "https://github.com/brajesh2306"
+            },
+            {
+                id: 3,
+                image: "assets\img\all-images\1bcr image.webp",
+                title: "Automation of Data Analysis for Billions of Data Points Using Cloud Services and Docker",
+                description: "This Article focuses on automating data analysis for large-scale datasets using cloud services and Docker. The goal is to streamline the processing of billions of data points, making data analysis more efficient and scalable.",
+                keyFindings: "The platform successfully automates data analysis workflows, reducing processing time by 70% and improving scalability for handling large datasets. Key technologies include Docker for containerization and cloud services for distributed computing.",
+                additionalFeatures: [
+                    "Automated data pipeline for processing billions of data points.",
+                    "Integration with cloud services for scalable computing resources.",
+                    "Docker-based containerization for consistent and reproducible environments.",
+                    "Real-time monitoring and logging for data analysis workflows.",
+                    "Support for multiple data formats and sources."
+                ],
+                pieChartData: [], // No pie chart data for this project
+                publicationDetails: [
+                    "Published on Stuvalley Technology",
+                    "Published on Medium"
+                ],
+                demoLink: "#",
+                paperLink: "https://medium.com/stuvalley-ai-nexus/automation-of-data-analysis-for-billions-of-data-points-using-cloud-services-and-docker-ca625017bca0"
+            },
+            {
+                id: 4,
+                image: "assets\img\all-images\image 2.webp", // Add an appropriate image
+                title: "From Data to Decisions: How Generative AI is Transforming Spend Analytics",
+                description: "This article explores the transformative role of Generative AI in spend analytics. By leveraging advanced AI models, organizations can gain deeper insights into their spending patterns, optimize costs, and make data-driven decisions.",
+                keyFindings: "Generative AI enables the creation of synthetic data for better spend analysis, improves forecasting accuracy, and automates the generation of actionable insights. Key applications include anomaly detection, trend analysis, and predictive modeling.",
+                additionalFeatures: [
+                    "Synthetic data generation for enhanced spend analysis.",
+                    "Improved forecasting accuracy using AI models.",
+                    "Automated anomaly detection in spending patterns.",
+                    "Predictive modeling for future spend optimization.",
+                    "Integration with existing ERP and financial systems."
+                ],
+                pieChartData: [], // No pie chart data for this project
+                publicationDetails: [
+                    "Published on Medium"
+                ],
+                demoLink: "",
+                paperLink: "https://medium.com/@brajeshs2004/from-data-to-decisions-how-generative-ai-is-transforming-spend-analytics-73ea6e5543c9"
+            }
+            // Add more projects as needed
+        ];
+
+        // Get the project ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        // Find the project by ID
+        const project = projects.find(p => p.id == projectId);
+
+        // Update the page content
+        if (project) {
+            // Update image
+            document.getElementById('research-image').src = project.image;
+
+            // Update title
+            document.getElementById('research-title').textContent = project.title;
+
+            // Update description
+            document.getElementById('research-description').textContent = project.description;
+
+            // Update key findings
+            document.getElementById('key-findings').textContent = project.keyFindings;
+
+            // Update additional features (if available)
+            const additionalFeaturesDiv = document.getElementById('additional-features');
+            if (project.additionalFeatures && project.additionalFeatures.length > 0) {
+                additionalFeaturesDiv.innerHTML = `
+                    <h2>Additional Features</h2>
+                    <ul class="key-points">
+                        ${project.additionalFeatures.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                `;
+            } else {
+                additionalFeaturesDiv.innerHTML = "";
+            }
+            // Update publication details (if available)
+            const publicationDetailsDiv = document.getElementById('publication-details');
+            if (project.publicationDetails && project.publicationDetails.length > 0) {
+                publicationDetailsDiv.innerHTML = `
+                    <h2>Publication Details</h2>
+                    <ul class="publication-details">
+                        ${project.publicationDetails.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                `;
+            } else {
+                publicationDetailsDiv.innerHTML = "";
+            }
+
+            // Update pie chart data
+            const pieChartTable = document.getElementById('pie-chart-data');
+            if (project.pieChartData.length > 0) {
+                document.getElementById('pie-chart-title').textContent = "Distribution of Heart Disease Types";
+                pieChartTable.innerHTML = `
+                    <tr>
+                        <th>Disease Type</th>
+                        <th>Percentage</th>
+                    </tr>
+                    ${project.pieChartData.map(data => `
+                        <tr>
+                            <td>${data.type}</td>
+                            <td>${data.percentage}</td>
+                        </tr>
+                    `).join('')}
+                `;
+            } else {
+                document.getElementById('pie-chart-title').textContent = "";
+                pieChartTable.innerHTML = "";
+            }
+
+            // Update buttons
+            document.getElementById('demo-button').href = project.demoLink;
+            document.getElementById('paper-button').href = project.paperLink;
+        } else {
+            // If project not found
+            document.getElementById('research-title').textContent = "Project Not Found";
+            document.getElementById('research-description').textContent = "The requested project does not exist.";
+        }
+    </script>
+</body>
+</html>
